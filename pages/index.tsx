@@ -1,12 +1,16 @@
-import type { NextPage } from 'next'
-import { Button } from "@mantine/core"
+import type {NextPage} from 'next'
+import {Box, Button} from "@mantine/core"
 import Link from "next/link";
+import Loader from "../Components/Loader";
 
 const Home: NextPage = () => {
   return (
-    <Link href="/hello" passHref>
-      <Button component="a">Next link button</Button>
-    </Link>
+    <Box>
+      <Link href="/hello" passHref>
+        <Button component="a">Next link button</Button>
+      </Link>
+      <Loader show/>
+    </Box>
   )
 }
 
