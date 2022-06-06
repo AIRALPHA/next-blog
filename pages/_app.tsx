@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { MantineProvider } from '@mantine/core';
+import {HeaderApp} from "../Components/HeaderApp";
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
@@ -21,6 +22,7 @@ export default function App(props: AppProps) {
           fontFamily: 'Roboto',
         }}
       >
+        <HeaderApp />
         <Component {...pageProps} />
       </MantineProvider>
     </>

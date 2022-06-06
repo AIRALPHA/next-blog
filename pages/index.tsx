@@ -7,7 +7,6 @@ import {HeaderApp} from "../Components/HeaderApp";
 const Home: NextPage = () => {
   return (
     <Box>
-      <HeaderApp links={[]}/>
       <Link href="/hello" passHref>
         <Button component="a">Next link button</Button>
       </Link>
