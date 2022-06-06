@@ -4,6 +4,7 @@ import {auth, googleAuthProvider} from "../lib/firebase";
 import {Anchor, Button, Container, createStyles, Group, Paper, TextInput, Text, Title} from "@mantine/core";
 import {GoogleButton} from "../Components/GoogleButton";
 import React from "react";
+import {useUserContext} from "../lib/context";
 
 const useStyles = createStyles((theme) => ({
   title: {
@@ -27,8 +28,7 @@ const useStyles = createStyles((theme) => ({
 
 const Enter: NextPage = () => {
   const {classes} = useStyles();
-  const user: string | null = null;
-  const username: string | null = null;
+  const {user, username} = useUserContext();
 
   function signInButton() {
     const signInWithGoogle = async () => {

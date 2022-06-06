@@ -4,6 +4,7 @@ import {useBooleanToggle} from '@mantine/hooks';
 import Avvvatars from "avvvatars-react";
 import {useRouter} from 'next/router'
 import ActiveLink from "./ActiveLink";
+import {useUserContext} from "../lib/context";
 
 const useStyles = createStyles((theme) => ({
   header: {
@@ -39,7 +40,8 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export function HeaderApp() {
-  const username: string | null = null;
+  const {user, username} = useUserContext();
+  alert(username);
   const router = useRouter();
   const [opened, toggleOpened] = useBooleanToggle(false);
   const {classes, cx} = useStyles();
@@ -55,10 +57,10 @@ export function HeaderApp() {
         </Box>
         <Group spacing={5} className={classes.links}>
           <ActiveLink href="/" title="Feed"/>
-          {username ?
+          {user ?
             <>
               <ActiveLink title="Write Posts" href="/admin"/>
-              <ActiveLink title={<Avvvatars style="shape" value="allpha"/>} href={`/${username}`}/>
+              <ActiveLink title={<Avvvatars style="shape" value={username ?? ""}/>} href={`/${username}`}/>
             </> :
             <ActiveLink title="Login" href="/enter"/>
 
