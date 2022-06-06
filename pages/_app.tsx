@@ -2,6 +2,7 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { MantineProvider } from '@mantine/core';
 import {HeaderApp} from "../Components/HeaderApp";
+import {Toaster} from "react-hot-toast";
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
@@ -24,6 +25,7 @@ export default function App(props: AppProps) {
       >
         <HeaderApp />
         <Component {...pageProps} />
+        <Toaster/>
       </MantineProvider>
     </>
   );
