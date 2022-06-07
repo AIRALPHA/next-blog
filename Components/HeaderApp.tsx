@@ -41,7 +41,6 @@ const useStyles = createStyles((theme) => ({
 
 export function HeaderApp() {
   const {user, username} = useUserContext();
-  alert(username);
   const router = useRouter();
   const [opened, toggleOpened] = useBooleanToggle(false);
   const {classes, cx} = useStyles();

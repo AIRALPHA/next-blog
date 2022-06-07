@@ -1,10 +1,11 @@
 import React, {createContext, useContext, useEffect, useState} from "react";
 import {useAuthState} from "react-firebase-hooks/auth";
 import {auth, firestore} from "./firebase";
-import {collection, doc, onSnapshot} from "@firebase/firestore";
+import {doc, onSnapshot} from "@firebase/firestore";
+import {User} from "@firebase/auth";
 
 interface userContext {
-  user: object | null | undefined,
+  user: User | null | undefined,
   username: string | null
 }
 
